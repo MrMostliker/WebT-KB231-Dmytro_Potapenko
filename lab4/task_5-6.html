@@ -1,0 +1,21 @@
+<div id="myBlock" style="border: 1px solid black; margin-bottom: 10px;">
+  Якийсь текст у блоці
+</div>
+
+<button onclick="applyStyles()">Змінити стиль (Завдання 5)</button>
+<button onclick="setGreen()">Зробити зеленим (Завдання 6)</button>
+
+<script>
+  function applyStyles() {
+    const block = document.getElementById('myBlock');
+    block.style.width = '200px';
+    block.style.height = '200px';
+    block.style.backgroundColor = 'magenta';
+    block.style.textAlign = 'center';
+  }
+
+  function setGreen() {
+    const block = document.getElementById('myBlock');
+    block.style.backgroundColor = 'green';
+  }
+</script>

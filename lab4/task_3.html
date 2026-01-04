@@ -1,0 +1,14 @@
+<input type="text" id="input1" value="Текст А">
+<input type="text" id="input2" value="Текст Б">
+<button onclick="swapValues()">Поміняти місцями</button>
+
+<script>
+  function swapValues() {
+    let field1 = document.getElementById('input1');
+    let field2 = document.getElementById('input2');
+    
+    let temp = field1.value;
+    field1.value = field2.value;
+    field2.value = temp;
+  }
+</script>

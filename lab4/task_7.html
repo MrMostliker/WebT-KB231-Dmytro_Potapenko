@@ -1,0 +1,16 @@
+<h1>Заголовок сторінки</h1>
+<p>Перший абзац</p>
+<p>Другий абзац</p>
+<p>Третій абзац</p>
+
+<button onclick="numberParagraphs()">Пронумерувати абзаци</button>
+
+<script>
+  function numberParagraphs() {
+    const paragraphs = document.querySelectorAll('p');
+    
+    paragraphs.forEach((p, index) => {
+      p.innerHTML = index + 1;
+    });
+  }
+</script>
