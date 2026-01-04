@@ -1,0 +1,26 @@
+<style>
+  table { border-collapse: collapse; }
+  td { width: 40px; height: 40px; border: 1px solid black; text-align: center; }
+  .highlight { background-color: red; color: white; }
+</style>
+
+<table id="myTable"></table>
+
+<script>
+  const table = document.getElementById('myTable');
+  const size = 5;
+
+  for (let i = 0; i < size; i++) {
+    let row = table.insertRow();
+    for (let j = 0; j < size; j++) {
+      let cell = row.insertCell();
+      cell.innerHTML = `${i+1}:${j+1}`;
+      
+      // Завдання 1: Головна діагональ (i == j)
+      //if (i === j) cell.classList.add('highlight');
+      
+      // Завдання 2: Побічна діагональ (i + j == size - 1)
+       if (i + j === size - 1) cell.classList.add('highlight');
+    }
+  }
+</script>

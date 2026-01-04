@@ -1,0 +1,38 @@
+<div>
+  <p>Комп'ютер обрав число від 1 до 100. Вгадайте його :)</p>
+  Ваш варіант: <input type="number" id="userGuess">
+  <button onclick="checkGuess()">Перевірити</button>
+  
+  <div id="history" style="background: #eee; margin: 10px 0; padding: 10px; min-height: 50px;">
+    </div>
+  
+  <button onclick="resetGame()">Зіграти ще</button>
+</div>
+
+<script>
+  let targetNumber = Math.floor(Math.random() * 100) + 1;
+  const historyDiv = document.getElementById('history');
+
+  function checkGuess() {
+    let guess = parseInt(document.getElementById('userGuess').value);
+    let message = "";
+
+    if (isNaN(guess)) return;
+
+    if (guess > targetNumber) {
+      message = "Забагато! Спробуй ще...";
+    } else if (guess < targetNumber) {
+      message = "Замало! Спробуй ще...";
+    } else {
+      message = "<b>Вітаю, ви вгадали!</b>";
+    }
+
+    historyDiv.innerHTML += `<div>${message}</div>`;
+  }
+
+  function resetGame() {
+    targetNumber = Math.floor(Math.random() * 100) + 1;
+    historyDiv.innerHTML = "";
+    document.getElementById('userGuess').value = "";
+  }
+</script>

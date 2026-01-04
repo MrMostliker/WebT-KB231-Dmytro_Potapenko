@@ -1,0 +1,25 @@
+<h3>Калькулятор</h3>
+<input type="number" id="n1">
+<input type="number" id="n2">
+<br><br>
+<button onclick="calc('+')">+</button>
+<button onclick="calc('*')">*</button>
+<button onclick="calc('-')">-</button>
+<button onclick="calc('/')">/</button>
+
+<p id="res">Результат: </p>
+
+<script>
+  function calc(op) {
+    let a = parseFloat(document.getElementById('n1').value);
+    let b = parseFloat(document.getElementById('n2').value);
+    let result = 0;
+
+    if (op === '+') result = a + b;
+    if (op === '*') result = a * b;
+    if (op === '-') result = a - b;
+    if (op === '/') result = b !== 0 ? a / b : "Помилка (ділення на 0)";
+
+    document.getElementById('res').innerHTML = "Результат: " + result;
+  }
+</script>
